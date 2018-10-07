@@ -10,15 +10,17 @@ class FundaSoldSpider(CrawlSpider):
     allowed_domains = ["funda.nl"]
 
     def __init__(self, place='amsterdam'):
-        self.start_urls = ["http://www.funda.nl/koop/verkocht/%s/p%s/" % (place, page_number) for page_number in range(1,1001)]
-        # self.start_urls = ["http://www.funda.nl/koop/verkocht/%s/p1/" % place]  # For testing, extract just from one page
-        self.base_url = "http://www.funda.nl/koop/verkocht/%s/" % place
+        # self.start_urls = ["http://www.funda.nl/koop/verkocht/%s/p%s/" % (place, page_number) for page_number in range(1,1001)]
+        self.start_urls = ["https://www.funda.nl/koop/verkocht/%s/p1/" % place]  # For testing, extract just from one page
+        self.base_url = "https://www.funda.nl/koop/verkocht/%s/" % place
         self.le1 = LinkExtractor(allow=r'%s+(huis|appartement)-\d{8}' % self.base_url)
         self.le2 = LinkExtractor(allow=r'%s+(huis|appartement)-\d{8}.*/kenmerken/' % self.base_url)
 
     def parse(self, response):
+        print('parse starft')
         links = self.le1.extract_links(response)
         slash_count = self.base_url.count('/')+1        # Controls the depth of the links to be scraped
+        print('link_lst=+',links,'+')
         for link in links:
             if link.url.count('/') == slash_count and link.url.endswith('/'):
                 item = FundaItem()
@@ -34,7 +36,9 @@ class FundaSoldSpider(CrawlSpider):
         title = response.xpath('//title/text()').extract()[0]
         postal_code = re.search(r'\d{4} [A-Z]{2}', title).group(0)
         address = response.xpath('//h1/text()').extract()[0].strip()
-        price_span = response.xpath("//span[contains(@class, 'price-wrapper' )]/span[contains(@class, 'price' )]/text()").extract()[0]
+
+        price_dd = response.xpath("//dt[contains(.,'Vraagprijs')]/following-sibling::dd[1]/text()").extract()[0]
+        price_span = response.xpath("//[contains(@strong @class, 'object-header__price--historic' )]").extract()[0]
         price = re.findall(r'\d+.\d+',price_span)[0].replace('.','')
         posting_date = response.xpath("//span[contains(@class, 'transaction-date') and contains(.,'Aangeboden sinds')]/strong/text()").extract()[0]
         sale_date = response.xpath("//span[contains(@class, 'transaction-date') and contains(.,'Verkoopdatum')]/strong/text()").extract()[0]

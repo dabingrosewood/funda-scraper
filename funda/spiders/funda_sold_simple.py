@@ -19,9 +19,11 @@ class FundaSoldSimpleSpider(CrawlSpider):
         links = self.le1.extract_links(response)
         for link in links:
             if link.url.count('/') == 7 and link.url.endswith('/'):
+                print
                 item = FundaItem()
                 item['url'] = link.url
                 if re.search(r'/appartement-',link.url):
+
                     item['property_type'] = "apartment"
                 elif re.search(r'/huis-',link.url):
                     item['property_type'] = "house"
