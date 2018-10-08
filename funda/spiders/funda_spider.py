@@ -14,7 +14,7 @@ class FundaSpider(CrawlSpider):
         # self.base_url = "https://www.funda.nl/koop/%s/" % place
         # self.le1 = LinkExtractor(allow=r'%s+(huis|appartement)-\d{8}' % self.base_url)
         # self.base_url = "https://www.funda.nl/koop/%s/" % place
-        self.le1 = LinkExtractor(allow=r'https://www.funda.nl/koop/(.*)/+(huis|appartement)-\d{8}' )
+        self.le1 = LinkExtractor(allow=r'https://www.funda.nl/koop/(.*)/(huis|appartement)-\d{8}' )
 
     def parse(self, response):
         links = self.le1.extract_links(response)
@@ -43,6 +43,12 @@ class FundaSpider(CrawlSpider):
         rooms_dd = response.xpath("//dt[contains(.,'Aantal kamers')]/following-sibling::dd[1]/text()").extract()[0]
         rooms = re.findall('\d+ kamer',rooms_dd)[0].replace(' kamer','')
         # bedrooms = re.findall('\d+ slaapkamer',rooms_dd)[0].replace(' slaapkamer','') #有部分房子没有标注卧室
+        surface_span = response.xpath(
+            "//dt[contains(.,'Wonen') or contains(.,'Oppervlakte')]/following-sibling::dd[1]/text()").extract()[0]
+        surface = re.findall(r'(\d+.\d+|\d+)', surface_span)[0].replace('.', '')
+        content_span = response.xpath(
+            "//dt[contains(.,'Inhoud')]/following-sibling::dd[1]/text()").extract()[0]
+        content = re.findall(r'(\d+.\d+|\d+)', content_span)[0].replace('.', '')
 
         new_item['postal_code'] = postal_code
         new_item['address'] = address
@@ -52,4 +58,6 @@ class FundaSpider(CrawlSpider):
         new_item['rooms'] = rooms
         # new_item['bedrooms'] = bedrooms
         new_item['city'] = city
+        new_item['surface'] = surface
+        new_item['content'] = content
         yield new_item

@@ -14,3 +14,5 @@ class FundaItem(scrapy.Item):
     city = scrapy.Field()
     posting_date = scrapy.Field()
     sale_date = scrapy.Field()
+    surface = scrapy.Field()
+    content = scrapy.Field()
