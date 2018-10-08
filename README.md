@@ -6,6 +6,8 @@ There are two spiders:
 
 1. `funda_spider` scrapes all properties for sale in a certain city, such as [http://www.funda.nl/koop/amsterdam/](http://www.funda.nl/koop/amsterdam/),
 2. `funda_spider_sold` scrapes data on properties which have recently been sold, such as those listed on [http://www.funda.nl/koop/verkocht/amsterdam/](http://www.funda.nl/koop/verkocht/amsterdam/).
+3.  使用时必须使用小写城市名 深度不能超过2
+
 
 After installing [Scrapy](www.scrapy.org), in the project directory simply run the command
 
@@ -38,3 +40,6 @@ The data can also be visualized in time, and used as a gauge of market sentiment
 **Figure 2.** Asking prices before sale (above) and days the property was offered on Funda (below) for over 11,000 properties in the period 1 April 2015 - 18 July 2016. The blue dots represent individual properties, the red curves weekly averages, and the green curves (weighted) exponential fits of the weekly averages. 
 
 As seen from Figure 2, over the period observed, house prices have increased by 15% per year on average. Despite that, the average time it takes for a property to sell has more than halved. (It remains to investigate whether these results are biased by how long Funda keeps pages of sold properties online). In short, the data seems to [confirm](http://www.dutchnews.nl/news/archives/2016/04/amsterdam-housing-market-is-overheating-prices-soar-20/) that the Amsterdam housing market is heating up!
+
+
+
