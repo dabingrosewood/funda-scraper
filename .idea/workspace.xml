@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="87ebfe19-e2a8-4e74-84b5-6cba125823e9" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/funda/spiders/funda_spider.py" beforeDir="false" afterPath="$PROJECT_DIR$/funda/spiders/funda_spider.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tst.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/txct.json" beforeDir="false" afterPath="$PROJECT_DIR$/global/scra_data.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/txt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/almere_for_sale.json" beforeDir="false" afterPath="$PROJECT_DIR$/data/almere_for_sale.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/data/alphen-aan-den-rijn_for_sale.csv" beforeDir="false" afterPath="$PROJECT_DIR$/global/data/alphen-aan-den-rijn_for_sale.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/data/alphen-aan-den-rijn_for_sale.json" beforeDir="false" afterPath="$PROJECT_DIR$/global/data/alphen-aan-den-rijn_for_sale.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/data/eindhoven_for_sale.json" beforeDir="false" afterPath="$PROJECT_DIR$/global/data/eindhoven_for_sale.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/global/data/katwijk_for_sale.json" beforeDir="false" afterPath="$PROJECT_DIR$/global/data/katwijk_for_sale.json" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -77,8 +76,8 @@
       <file leaf-file-name="scra_data.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/global/scra_data.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="14" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="225">
+              <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
             </state>
           </provider>
         </entry>
@@ -261,11 +260,12 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1680" height="1050" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32923076" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32923076" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Python Console" weight="0.32923076" />
       <window_info anchor="bottom" id="Terminal" weight="0.33948717" />
@@ -456,8 +456,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/global/scra_data.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
+        <state relative-caret-position="225">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
         </state>
       </provider>
     </entry>
