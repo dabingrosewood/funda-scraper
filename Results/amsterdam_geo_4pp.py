@@ -1,5 +1,6 @@
 ''' In lieu of geolocation, coordinates are looked up from the four numbers of the Dutch postal code only.'''
 import pandas as pd
+import numpy as np
 
 df = pd.read_json('amsterdam_sold_geo.json')
 df.reset_index(drop = True)
@@ -26,4 +27,4 @@ df['postal_code_4pp'] = df['postal_code'].apply(get_4pp)
 df['latitude_4pp'] = df['postal_code_4pp'].apply(get_latitude)
 df['longitude_4pp'] = df['postal_code_4pp'].apply(get_longitude)
 
-df.to_json('amsterdam_sold_geo4pp.json')
+df.to_json('amsterdam_sold_geo4pp_tst.json')

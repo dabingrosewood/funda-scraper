@@ -9,7 +9,7 @@ for line in lines:
     place=line.strip('\n').replace(' ','-').lower()
     print('now starting to catch data of city: ',count,place)
 
-    com='scrapy crawl funda_spider_sold -a place='+place+' -o data/sold/'+place+'_for_sale.csv'
+    com='scrapy crawl funda_spider_sold -a place='+place+' -o data/sold/'+place+'_for_sold.csv'
     print('com=',com)
     os.system(com)
 
