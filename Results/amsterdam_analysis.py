@@ -11,6 +11,7 @@ df['price per unit area'] = df['price'] / df['area']
 df['postdate']=pd.to_datetime(df['posting_date'], dayfirst = True)
 df['saledate']=pd.to_datetime(df['sale_date'], dayfirst = True)
 
+# print(df['saledate'] - df['postdate'])
 df['time_to_sell'] = df['saledate'] - df['postdate']
 
 dfp=df[df['price'] > 50000]
